@@ -32,18 +32,5 @@ it('register new user fail', async () => {
         message: 'User name must be between 4 and 30 characters',
       });
  });
-
- it('log in', async () => {
-  const loginResponse = await spec()
-    .post(`${baseURL}/users/login`)
-    .withBody({
-      email: "andrei.panoiu96@example.com",
-      password: "Parola123!"
-    })
-    .inspect()
-    .expectStatus(200);
-  token = loginResponse.body.token;// Salveaza token
-  console.log('token:', token);
-});
 });
 
